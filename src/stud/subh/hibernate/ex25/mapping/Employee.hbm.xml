@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex25.dao.Employee" table="my_emp">
+		<id name="empno">
+			<generator class="increment" />
+		</id>
+		<property name="name"/>
+		<joined-subclass name="stud.subh.hibernate.ex25.dao.HourlyEmployee" table="HOURLY_EMPLOYEE">
+			<key column="empno" />
+			<property name="costPerHour" column="rate_per_hour" />
+			<property name="workedHour" column="worked_hour" />
+		</joined-subclass>
+		<joined-subclass name="stud.subh.hibernate.ex25.dao.SalariedEmployee" table="SALARYIED_EMPLOYEE">
+			<key column="empno" />
+			<property name="salary" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,6 @@
+Hibernate with Annotation
+
+there are two API to build annotation
+
+1. JPI API (javax.persistence.*)
+2. Hibernate API (org.hibernate.annotations.*)

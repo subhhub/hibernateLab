@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+                 
+	<class name="stud.subh.hibernate.ex6.dao.Login" table="login">
+		<id name="loginID" column="loginID"/>
+		<property name="password" column="password"/>
+		<property name="emailID" column="emailID"/>
+	</class>
+</hibernate-mapping>

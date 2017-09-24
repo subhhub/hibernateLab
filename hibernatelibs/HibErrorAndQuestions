@@ -1,0 +1,22 @@
+E - Exception in thread "main" org.hibernate.AnnotationException: No identifier specified for entity: stud.subh.hibernate.ex11.dao.Account
+E - Caused by: org.hibernate.AnnotationException: No identifier specified for entity: stud.subh.hibernate.ex11.dao.Account
+S - (above both)Check instance bindingis properly or not for e.g.
+	
+	"this type of binding will generate avoe error"
+	@Id
+	private static final long serialVersionUID = 1L;		//error 
+	@Column (name="accno")
+	private int accountno;
+	
+	//correct
+	private static final long serialVersionUID = 1L;	
+	@Id
+	@Column (name="accno")
+	private int accountno;
+	
+T - At the time of HQL Query writing ensure that your prsistent object name should not be existing database table name for e.g.
+	"SELECT e FROM Employee e" in this query employee is persistent object as well as database table name.
+	In this situation Hibernate engine by default will pick the database table in place of persistent object 
+	
+E - Caused by: org.hibernate.HibernateException: Unable to instantiate default tuplizer [org.hibernate.tuple.entity.PojoEntityTuplizer]
+	

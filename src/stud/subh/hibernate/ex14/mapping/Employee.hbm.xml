@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex14.dao.Employee">	
+		<id name="empno"/>
+		<property name="name"/>
+		<property name="salary"/>
+		<property name="deptno"/>
+		<component name="addr">			<!-- O/r Mismatch solution : granularity -->
+			<property name="hno" />
+			<property name="street" />
+			<property name="city" />
+			<property name="pin" />
+		</component>
+	</class>
+</hibernate-mapping>

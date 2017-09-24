@@ -1,0 +1,17 @@
+ 
+ drop table UC1_appointment;
+ create table UC1_appointment (appointid int primary key, appointment_name varchar2(30));
+ 
+ drop table UC1_disease;
+ create table UC1_disease(diseaseid int primary key, disease_name varchar2(30));
+ 
+ drop table UC1_ocnsultant;
+ create table UC1_ocnsultant (consultid int primary key, 
+ 								diseaseid int constraint diseaset_consultant_FK  references UC1_disease(diseaseid), 
+ 								consult_name varchar2(30));
+ 
+ drop table UC1_consultant_detail;
+ create table UC1_consultant_detail(consult_dtl_id int primary key, 
+ 								appointid int constraint appoint_appoint_FK  references UC1_appointment(appointid), 
+ 								consultid int constraint ocnsultt_appoint_FK  references UC1_ocnsultant(consultid), 
+ 								diseaseid int constraint diseaset_appoint_FK  references UC1_disease(diseaseid));		

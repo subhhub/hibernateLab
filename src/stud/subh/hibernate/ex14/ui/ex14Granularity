@@ -1,0 +1,37 @@
+Q: Explain about O/R mismatch?
+
+Ans:  There exist paradigm(principal) mismatch (impedance mismatch) between object oriented and relation representation of data in an enterprise application.
+
+Most notable mismatches are
+1.	Problem of granularity
+2.	Problem of subtypes (inheritance mismatch)
+3.	Problem of relationship (relation mismatch)
+
+Relative size of the data with which we are working is known as granularity.
+
+Data are(is) both course grained and fine grained.
+
+If UDT(user defined datatype) is the column type of a table it is set to be course grained, if no table column is of UDT, that table is set to be fine grained. 
+
+Course grained table in RDBMS has not consistent support and therefore almost abandoned.
+
+If UDT is a data member in a persistent class it is set to be course grained.
+
+If no data member is a UDT is a persistent class, it is said to be fined grained. 
+
+----------------
+
+drop table employee;
+create table employee 
+	(empno number(8) primary key, 
+	name varchar(12), 
+	salary number(8,2), 
+	deptno varchar(4),
+	hno varchar(20),
+	street varchar(12),
+	city varchar(15),
+	pin varchar(6)
+	);
+
+insert into employee values(1001, 'subh', 40000, 111, 420, 'east turn', 'hyderabad', '500038');
+insert into employee values(1002, 'sanj', 30000, 111, 420, 'east turn', 'hyderabad', '500038');

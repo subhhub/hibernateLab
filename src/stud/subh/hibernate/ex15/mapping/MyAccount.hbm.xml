@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex15.dao.MyAccount">	
+		<composite-id>
+			<key-property name="accno1" />		<!-- Composite Primary key -->
+			<key-property name="accno2" />
+		</composite-id>
+		<property name="name"/>
+		<property name="balance" column="bal"/>
+	</class>
+</hibernate-mapping>

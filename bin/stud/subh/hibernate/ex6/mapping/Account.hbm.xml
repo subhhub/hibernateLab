@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex6.dao.Account" table="ACCOUNT">
+		<id name="acno" column="ACCNO">
+			<!--<generator class="assigned"/>	-->		<!-- Assigned Generator -->
+			<!--<generator class="org.hibernate.id.Assigned"/>-->
+			
+			<!--<generator class="increment"/> -->	<!-- Increment Generator (Work like Auto Increment) -->
+			<!--<generator class="org.hibernate.id.IncrementGenerator" />-->
+			
+			<!--<generator class="sequence" />-->	<!-- Sequence Generator : default sequence "hibernate_sequence" -->
+			<!--<generator class="org.hibernate.id.SequenceGenerator">
+				<param name="sequence">accuont_sequence</param>
+			</generator>-->
+			<generator class="hilo">
+	        </generator>
+		</id>	
+		<property name="nm" column="NAME"/>
+		<property name="bal" column="BALANCE"/>
+	</class>
+</hibernate-mapping>

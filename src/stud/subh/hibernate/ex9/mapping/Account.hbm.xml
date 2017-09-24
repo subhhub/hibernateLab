@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex9.ui.Account">	
+		<id name="accountno" column="ACCNO"/>
+		<property name="name"/>
+		<property name="balance"/>
+	</class>
+</hibernate-mapping>
+
+<!-- If Persistent Object name and their instance field name are same
+ as table name is same than no need to mention table or their field name -->

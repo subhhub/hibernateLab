@@ -1,0 +1,15 @@
+CompositeID Primary key Approach 2
+
+----------------
+
+drop table MyAccount;
+create table MyAccount 
+	(accno1 number(6), 
+	accno2 number(6), 
+	primary key(accno1,accno2),
+	name varchar(20),
+	bal number(9,2)
+	);
+
+insert into MyAccount values(1001, 1003, 'subh', '50008');
+insert into MyAccount values(1003, 1004, 'sanj', '50008');

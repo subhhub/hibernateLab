@@ -1,0 +1,5 @@
+Q: How to have a unique session object per thread?(Its Basically Core Java)
+
+Ans:  Using java.lang.ThreadLocal class
+
+This is a map like object. It can store any java object(reference) with thread name as key and object(reference) as value.

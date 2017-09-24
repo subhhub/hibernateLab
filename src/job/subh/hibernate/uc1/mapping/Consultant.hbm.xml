@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex20.dao.ATMCard" table="Atm_Card">
+		<id name="cardno" column="CARD_NO"/>
+		<property name="cardpassword" column="CARD_PASSWORD"/>
+		<property name="cardtype" column="CARD_TYPE"/>
+		<!--<one-to-one name="account" property-ref="atmCard" cascade="all"/>-->
+		<one-to-one name="account" class="stud.subh.hibernate.ex20.dao.Account" cascade="all"/>
+	</class>
+</hibernate-mapping>

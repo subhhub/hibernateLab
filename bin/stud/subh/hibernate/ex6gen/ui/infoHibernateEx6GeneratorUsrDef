@@ -1,0 +1,12 @@
+Generators
+-----------
+User Defined
+
+
+Create table
+================
+drop table loan;
+create table loan(loanID varchar(20), name varchar(30), amount float);
+
+
+create sequence loan_sequence start with 1 increment by 1;

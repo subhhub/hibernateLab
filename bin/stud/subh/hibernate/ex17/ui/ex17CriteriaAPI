@@ -1,0 +1,7 @@
+Criteria API 
+----------------------------
+Read Data
+	Criteria = Select
+	Criterion = Where
+		Restriction Data = All Where conditions
+		Projections = Specific Field data

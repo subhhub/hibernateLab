@@ -1,0 +1,15 @@
+Named Query With Annotation
+----------------------------
+
+A HQL query which is develop outside the DAO method (either in the mapping file or within the POJO class if annotation are used)  and name given it is called named query.
+
+Named query overcome all the limitation of anonymous queries.
+
+Following steps are involved to create named query in a hibernate application.
+
+1.	In place of  mapping file use Persistent object for named query for e.g.
+		@NamedQuery (name="allacounts", query="SELECT a FROM Account a")
+2.	Create the query object for e.g.
+		Query qry = session.getNamedQuery(“allacounts”);
+3.	Bind the parameter if any.
+4.	Execute the query.

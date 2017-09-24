@@ -1,0 +1,12 @@
+Named Query With Multiple Database Operations Using Annotation
+----------------
+
+drop table employeehbr;
+create table employeehbr (empno number(6) primary key, name varchar(12), salary number(5), deptno varchar(4));
+
+insert into employeehbr values(1001, 'subh', 40000, 111);
+insert into employeehbr values(1002, 'sanj', 30000, 111);
+insert into employeehbr values(1003, 'ravi', 20000, 112);
+insert into employeehbr values(1004, 'amit', 10000, 112);
+insert into employeehbr values(1005, 'pankj', 39000, 115);
+insert into employeehbr values(1006, 'rahul', 38000, 115);

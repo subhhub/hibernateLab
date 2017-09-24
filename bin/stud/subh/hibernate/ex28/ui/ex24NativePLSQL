@@ -1,0 +1,13 @@
+Native SQL
+-----------------
+
+Procedure Calling
+----------------------
+
+create or replace procedure changebal (ano number, newbal number)
+as
+begin
+update account set balance:=newbal where accno:=ano;
+end;
+/			
+					

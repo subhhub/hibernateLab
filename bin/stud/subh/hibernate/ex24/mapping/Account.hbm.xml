@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.ex24.dao.Account">
+		<id name="accno" />
+		<property name="name" />
+		<property name="balance" />
+	</class>
+
+	<sql-query name="allaccunt">	<!-- If using named sql otherwise remove this tag -->
+		select * from account
+	</sql-query>
+
+	<sql-query name="fewaccunt">	<!-- If using named sql otherwise remove this tag -->
+		<return-scalar column="name" type="string" />
+		<return-scalar column="balance" type="float" />
+		select * from account
+	</sql-query>
+	
+	<sql-query name="avg">
+		<return-scalar column="avgbal" type="float" />
+		select avg(balance) as avgval from account
+	</sql-query>
+
+</hibernate-mapping>

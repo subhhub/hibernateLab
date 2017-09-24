@@ -1,0 +1,19 @@
+Relationship Mismatch
+--------------
+
+Inheritance
+	1. One table for entire hierarchy (Implementation Here)
+	2. Table per class
+	3. Table per concrete sub class
+
+Query
+---------
+
+drop table employee_detail;
+					
+create table employee_detail(empno number(4),  
+								name varchar(20), 
+								emp_desc varchar(12),
+								rate_per_hour number(9,2), 
+								worked_hour number(3), 
+								salary number(9,2));					

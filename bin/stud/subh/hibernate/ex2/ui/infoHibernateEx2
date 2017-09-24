@@ -1,0 +1,9 @@
+Develop java application in which the following use-case are implemented.
+1.	Account Opening 
+2.	Account Closing
+3.	Deposit (credit the amount)
+4.	Withdrawal(debit the amount)
+
+with seperate sessin util and dao class
+
+Note: Only multi record retrieval and exception is missing in this example wtih DAO Class

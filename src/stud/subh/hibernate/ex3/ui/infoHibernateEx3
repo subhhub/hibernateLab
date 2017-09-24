@@ -1,0 +1,15 @@
+Multi database using
+
+1. per database configuration file
+2. single configuration file for multi database
+
+
+ERROR ON SQL SERVER 2005 Configuration
+--------------------------------------
+Did you check if the SQL servers has the 1433 port available?
+Try the following command: telnet <serverName> 1433
+
+Check in the sqlServer if the TCP/IP protocol is enable.
+Check if the Database is started.
+Check for the domain of the Database, if you are in the same domain.
+
