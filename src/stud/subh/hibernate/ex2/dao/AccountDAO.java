@@ -85,7 +85,8 @@ public class AccountDAO {
 			throw new AccountNotFoundExcecption();
 		}
 		finally{
-			session.close();			
+			if(session!=null)
+				session.close();			
 		}
 		
 		return accounts;

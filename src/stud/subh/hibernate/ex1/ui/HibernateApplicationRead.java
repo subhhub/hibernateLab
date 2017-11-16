@@ -2,9 +2,10 @@ package stud.subh.hibernate.ex1.ui;
 
 import java.util.Scanner;
 
-import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 import stud.subh.hibernate.ex1.dao.Account;
 
@@ -21,9 +22,12 @@ public class HibernateApplicationRead {
 //		configuration.configure();		//if configuration file in root directory
 		configuration.configure("stud/subh/hibernate/ex1/mapping/hibernate.cfg.xml");
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
-		Session session = sessionFactory.openSession();
+//		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		
+		Transaction tx = session.beginTransaction();
 		Account account = (Account)session.get(Account.class, acno);
+		tx.commit();
 		
 		//Reading
 		if(account!=null){
@@ -34,7 +38,7 @@ public class HibernateApplicationRead {
 		else
 			System.out.println("Account Dont Exist");
 		
-		session.clear();
+//		session.clear();
 		sessionFactory.close();
 	}
 }

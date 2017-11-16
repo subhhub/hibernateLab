@@ -24,8 +24,8 @@ public class HibernateApplicationSave {
 		
 		Configuration configuration = new Configuration();
 //		configuration.configure();		//if configuration file in root directory with default configuration file name(hibernate.cfg.xml)
-//		configuration.configure("stud/subh/hibernate/ex1/mapping/hibernate.cfg.xml");
-		configuration.configure("stud/subh/hibernate/ex1/mapping/hibernateMySQL.cfg.xml");
+		configuration.configure("stud/subh/hibernate/ex1/mapping/hibernate.cfg.xml");
+//		configuration.configure("stud/subh/hibernate/ex1/mapping/hibernateMySQL.cfg.xml");
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		
