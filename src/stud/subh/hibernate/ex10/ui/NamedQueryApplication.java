@@ -16,5 +16,13 @@ public class NamedQueryApplication {
 		for(Account a:accounts){
 			System.out.println(a.getAccountno()+" "+a.getName()+" "+a.getBalance());
 		}
+		
+		
+		List<Object[]>namBal = accountDAO.findNameBalance();
+		
+		System.out.println("No of persistent object : "+namBal.size());
+		for(Object[] a:namBal){
+			System.out.println(a[0]+" "+a[1]);
+		}
 	}
 }

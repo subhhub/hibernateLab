@@ -75,7 +75,7 @@ public class AccountDAO {
 		List<Account> accounts = null;
 		try {
 			session = SessionUtil.getSession();
-			Query qry = session.createQuery("SELECT a FROM Account a");
+			Query qry = session.createQuery("SELECT a FROM Account a"); 
 			accounts = qry.list();
 			if(accounts==null)
 				throw new AccountNotFoundExcecption();

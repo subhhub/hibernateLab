@@ -4,7 +4,9 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="stud.subh.hibernate.ex1.dao.Account" table="ACCOUNT">
-		<id name="acno" column="ACCNO"/>
+		<id name="acno" column="ACCNO">
+			<!-- <generator class="org.hibernate.id.IncrementGenerator"/> -->
+		</id>
 		<property name="nm" column="NAME" />
 		<property name="bal" column="BALANCE"/>
 	</class>
