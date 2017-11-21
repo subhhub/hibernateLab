@@ -17,7 +17,7 @@ public class DBUtil {
 
 	public static Connection getOracleConnection() throws SQLException {
 
-		return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "subh", "subh");
+		return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "subh", "subh");
 	}
 	public static Connection getMySQLConnection() throws SQLException {
 
