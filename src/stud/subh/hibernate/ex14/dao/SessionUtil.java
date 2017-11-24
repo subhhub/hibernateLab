@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
  * Session Object Provider
  */
 public class SessionUtil {
-
+	
 	private static SessionFactory sessionFactory;
 	
 	//OPTION A

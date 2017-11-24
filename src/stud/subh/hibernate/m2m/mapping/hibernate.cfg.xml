@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+	<property name="connection.username">subh</property>
+	<property name="connection.password">subh</property>
+	<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+	<property name="show_sql">true</property>		<!-- It show the hibernate generated sql statement -->
+	<mapping resource="stud/subh/hibernate/m2m/mapping/Student.hbm.xml"/>
+	<mapping resource="stud/subh/hibernate/m2m/mapping/Course.hbm.xml"/>
+</session-factory>
+</hibernate-configuration>

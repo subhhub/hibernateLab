@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.o2m.dao.Department">
+		<id name="deptno"/>
+		<property name="deptname" column="dept_name"/>
+		<property name="location"/>
+		<bag name="employees" cascade="all">	<!-- One to Many relation field -->
+			<key column="emp_deptno"/>
+			<one-to-many class="stud.subh.hibernate.o2m.dao.Employee" />
+		</bag>
+	</class>
+</hibernate-mapping>

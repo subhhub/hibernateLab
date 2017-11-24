@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="stud.subh.hibernate.o2o.dao.AccountPlus" table="account_plus">
+		<id name="accno">
+			<generator class="sequence">
+				<param name="sequence">ACCOUNT_PLUS_SEQ</param>
+			</generator>
+		</id>
+		<property name="location"/>
+		<property name="type"/>
+	</class>
+</hibernate-mapping>

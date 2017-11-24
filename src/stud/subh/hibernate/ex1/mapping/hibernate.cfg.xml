@@ -12,6 +12,24 @@
 	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 	<property name="hibernate.current_session_context_class">thread</property>
 	<property name="show_sql">true</property>		<!-- It show the hibernate generated sql statement -->
+	<!-- <property name="hbm2ddl.auto">create</property>  -->
+	<property name="hbm2ddl.auto">update</property> 
+	
+	<!-- JDBC conneciton pool (built-in) -->
+	<!-- <property name="connection.pool_size">10</property> -->
+	
+	<!-- Disable the second-level cache  -->
+    <!-- <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property> -->  
+	
+	<!-- configuration pool via c3p0--> 
+	<property name="hibernate.c3p0.min_size">5</property>
+  	<property name="hibernate.c3p0.max_size">20</property>
+  	<property name="hibernate.c3p0.timeout">300</property>
+  	<property name="hibernate.c3p0.max_statements">50</property>
+  	<property name="hibernate.c3p0.idle_test_period">3000</property>
+	
+	<!-- Mapping files -->
 	<mapping resource="stud/subh/hibernate/ex1/mapping/Account.hbm.xml"/>
+	<mapping resource="stud/subh/hibernate/ex1/mapping/AccountAuto.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>

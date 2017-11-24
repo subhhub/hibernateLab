@@ -2,9 +2,9 @@ package job.subh.hibernate.uc1.ui;
 
 import org.hibernate.Session;
 
-import stud.subh.hibernate.ex20.dao.Account;
-import stud.subh.hibernate.ex20.dao.ATMCard;
-import stud.subh.hibernate.ex20.dao.SessionUtil;
+import stud.subh.hibernate.o2obipkfk.dao.ATMCard;
+import stud.subh.hibernate.o2obipkfk.dao.Account;
+import stud.subh.hibernate.o2obipkfk.dao.SessionUtil;
 
 public class RelationO2OPKFKBiApplication {
 	public static void main(String[] args) {

@@ -2,8 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC 
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
-	<class name="stud.subh.hibernate.ex1.dao.Account" table="ACCOUNT">
+<hibernate-mapping default-lazy="false">	<!-- default lazy is true -->	
+	<class name="stud.subh.hibernate.ex1.dao.Account" table="ACCOUNT" >
 		<id name="acno" column="ACCNO">
 			<!-- <generator class="org.hibernate.id.IncrementGenerator"/> -->
 		</id>

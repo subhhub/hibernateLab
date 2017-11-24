@@ -1,0 +1,35 @@
+Relationship
+--------------
+
+uni/bi-directional many to many relationship
+
+Query
+---------
+
+drop table student;
+drop table course;
+drop table student_course;
+
+create table course(cno number primary key, cname varchar2(20));
+insert into course values(2001, 'java');
+insert into course values(2002, '.net');
+insert into course values(2003, 'php');
+insert into course values(2004, 'testing');
+
+create table Student(sno number primary key, sname varchar2(20));
+insert into Student values(101, 'david');
+insert into Student values(102, 'satish');
+insert into Student values(103, 'ramu');
+insert into Student values(104, 'rahim');					
+					
+create table student_course(student_no number references Student(sno), course_no references course(cno));
+insert into student_course values(101, 2001);
+insert into student_course values(101, 2002);
+insert into student_course values(101, 2003);
+insert into student_course values(102, 2004);
+insert into student_course values(102, 2001);
+insert into student_course values(103, 2001);
+insert into student_course values(103, 2004);
+insert into student_course values(104, 2004);
+
+					

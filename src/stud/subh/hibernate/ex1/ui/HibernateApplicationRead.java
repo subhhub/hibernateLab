@@ -1,7 +1,9 @@
 package stud.subh.hibernate.ex1.ui;
 
+import java.util.List;
 import java.util.Scanner;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -27,6 +29,7 @@ public class HibernateApplicationRead {
 		
 		Transaction tx = session.beginTransaction();
 		Account account = (Account)session.get(Account.class, acno);
+//		Account account = (Account)session.load(Account.class, acno);	
 		tx.commit();
 		
 		//Reading
@@ -38,7 +41,18 @@ public class HibernateApplicationRead {
 		else
 			System.out.println("Account Dont Exist");
 		
+//		session.close();
 //		session.clear();
-		sessionFactory.close();
+//		sessionFactory.close();
+		
+		Session session2 = sessionFactory.getCurrentSession();
+		session2.beginTransaction().begin();
+		Query qry = session2.createQuery("select a from Account a");
+		qry.setFirstResult(2);
+		qry.setMaxResults(2);
+		List ls = qry.list();
+		session2.beginTransaction().commit();
+		System.out.println("size "+ls.size());
+		
 	}
 }
