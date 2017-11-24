@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>	<!-- default lazy is true -->	
+	<class name="stud.subh.hibernate.ex1.dao.AccountAuto" >
+		<id name="acno">
+			<!-- <generator class="org.hibernate.id.IncrementGenerator"/> -->
+		</id>
+		<property name="nm" />
+		<property name="email" unique-key="true"/>
+		<property name="bal"/>
+	</class>
+</hibernate-mapping>

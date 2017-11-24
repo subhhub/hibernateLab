@@ -1,0 +1,13 @@
+Relationship
+--------------
+
+many to many relationship (bidirectional) many to one
+
+
+Using "mappedBy" attribute of mapping annotations(like @OneToOne, @OneToMany, @ManyToMany) for bi-directional relationship. 
+This attribute allows you to refer the associated entities from both sides. 
+If "X" has association with "Y" then you can get X from Y and Y from X.
+Query
+---------
+
+

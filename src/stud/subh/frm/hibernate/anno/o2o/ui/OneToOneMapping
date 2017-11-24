@@ -1,0 +1,26 @@
+
+One to one relation is responsible in two ways
+1.	PK => PK
+2.	PK => FK (unique)
+
+PK = PK (O2O)
+PK = FK (Unique O2O)
+
+
+PK = One Record
+FK = Multiple Record
+
+
+Account (Table)		ATM (Table)	=> O2O
+
+
+Query
+-----------
+
+create sequence account_seq start with 40001 increment by 1;
+
+create sequence account_plus_seq start with 40001 increment by 1;
+
+create table account_plus(accno number(10) primary key, location varchar2(20), type varchar(20));
+
+create table account(accno number(10) primary key, name varchar2(20), balance number(9,2));

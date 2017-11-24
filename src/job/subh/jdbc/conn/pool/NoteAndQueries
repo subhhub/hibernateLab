@@ -1,0 +1,47 @@
+
+The DBCP Component
+Many Apache projects support interaction with a relational database. 
+Creating a new connection for each user can be time consuming (often requiring multiple seconds of clock time), 
+in order to perform a database transaction that might take milliseconds. Opening a connection
+per user can be unfeasible in a publicly-hosted Internet application where the number of simultaneous 
+users can be very large. Accordingly, developers often wish to share a "pool" of open connections between all of 
+the application's current users. The number of users actually performing a request at any given time is usually 
+a very small percentage of the total number of active users, and during request processing is the only time that 
+a database connection is required. The application itself logs into the DBMS, and handles any user account 
+issues internally.
+
+There are several Database Connection Pools already available, both within Apache products and elsewhere. 
+This Commons package provides an opportunity to coordinate the efforts required to create and maintain an efficient, 
+feature-rich package under the ASF license.
+
+
+What We Need for this program ?
+DBCP2 Apache Commons Library
+Pool2 Apache Commons Library
+Apache Commons Logging Library
+JDBC Driver (We use MYSQL 5 Driver)
+An IDE of our taste (We use Eclipse)
+JDK 1.7 (Due to DBCP2 runs on Java 7)
+An DBMS running with a valid Schema (In this example we named it “Test” in MYSQL 5 Engine)
+
+
+
+=======================================================
+/* Create New Database In MySQL */
+CREATE DATABASE tutorialDb;
+
+/* Use The Newly Created Database To Create A Table */
+USE tutorialDb;
+
+/* Create Table In MySQL */
+CREATE TABLE technical_editors (tech_id int(11) NOT NULL AUTO_INCREMENT, tech_username varchar(20) DEFAULT NULL, PRIMARY KEY (tech_id));
+
+/* Insert Data Into Table */
+INSERT INTO technical_editors (tech_id, tech_username) VALUES (1, 'Java Code Geek');
+INSERT INTO technical_editors (tech_id, tech_username) VALUES (2, 'Harry Potter');
+
+/* Display Table Data */
+SELECT * FROM technical_editors;
+
+/* Display Table Structure */
+DESC technical_editors;

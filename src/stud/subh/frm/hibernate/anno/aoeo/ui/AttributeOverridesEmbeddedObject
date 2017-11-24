@@ -1,0 +1,21 @@
+
+AttributeOverrides and Embedded Object Keys
+
+----------------
+
+Suppose we have two addresses one is home and another one is office address, 
+In this scenario table column names should be different for home and office addresses, 
+we can override the table column name using annotation @AttributeOverrides.
+@AttributeOverrides({
+                @AttributeOverride(name="street", column=@Column(name="HOME_STREET_NAME")),
+                @AttributeOverride(name="city", column=@Column(name="HOME_CITY_NAME")),
+                @AttributeOverride(name="state", column=@Column(name="HOME_STATE_NAME")),
+                @AttributeOverride(name="pincode", column=@Column(name="HOME_PIN_CODE")),
+})
+@EmbeddedId: It is used when you want to use an object as primary key instead of @Id and that object is 
+the combination of all member variables and it should be unique.
+
+Eg:
+@EmbeddedID
+private LoginUser userId;
+Above annotation are used to override column names in database.

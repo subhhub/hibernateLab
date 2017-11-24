@@ -1,0 +1,6 @@
+
+Saving Collection Data
+
+-----------------------------------
+@CollectionID annotation is used to create id field in reference table while adding collection data.
+collectinID annotation is not available in JPA, it is hibernate implementation.

@@ -1,0 +1,2 @@
+Second level cache = for get and load
+query cache = for HQL
