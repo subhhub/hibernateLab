@@ -1,7 +1,8 @@
 package job.subh.jdbc;
 
-import java.sql.DriverManager;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
@@ -51,13 +52,50 @@ public class JDBCBatchUpdateStatement {
 			// Create an int[] to hold returned values
 			int[] count = statement.executeBatch();
 
-			//This method removes all the statements you added with the addBatch() method. However, 
-			//you cannot selectively choose which statement to remove.
+			// This method removes all the statements you added with the
+			// addBatch() method. However,
+			// you cannot selectively choose which statement to remove.
 			statement.clearBatch();
-			
+
 			dbConnection.commit();
 			System.out.println("Records are inserted into DBUSER table!");
 
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (statement != null) {
+				statement.close();
+			}
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+		}
+	}
+
+	private static void selectRecordsFromDbUserTable() throws SQLException {
+
+		Connection dbConnection = null;
+		Statement statement = null;
+
+		String selectTableSQL = "SELECT USER_ID, USERNAME from DBUSER";
+
+		try {
+			dbConnection = getDBConnection();
+			statement = dbConnection.createStatement();
+
+			System.out.println(selectTableSQL);
+
+			// execute select SQL stetement
+			ResultSet rs = statement.executeQuery(selectTableSQL);
+
+			while (rs.next()) {
+				String userid = rs.getString("USER_ID");
+				String username = rs.getString("USERNAME");
+
+				System.out.println("userid : " + userid);
+				System.out.println("username : " + username);
+
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
